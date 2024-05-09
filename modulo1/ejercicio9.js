@@ -9,5 +9,6 @@ const rl=readline.createInterface
         const vocal=palabra.match(/[aeiou]/gi);
         const conteo=vocal ? vocal.length: 0;
 console.log(`la palabra ingresada tiene las siguiente vocales:  ${conteo}`);
+rl.close();
     }
 )

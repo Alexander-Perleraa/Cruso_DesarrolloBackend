@@ -7,4 +7,5 @@ const rl= readline.createInterface({
 rl.question('Ingrese una frase:',(frase)=>{
     const palabras=frase.split(' ');
     console.log(`Numero de palabras: ${palabras.length}`);
+    rl.close();
 })
