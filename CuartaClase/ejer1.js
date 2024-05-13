@@ -1,7 +1,8 @@
-const readline = require('readline');
-
-const rl = readline.createInterface
-({  
-    input: process.stdin,
-    output: process.stdout
-})
+function saludar(nombre, callback){
+    const saludo = `hola , ${nombre}`
+    callback(saludo)
+}
+function mostrar(saludo){
+    console.log(saludo)
+}
+saludar(`Alex`, mostrar)
