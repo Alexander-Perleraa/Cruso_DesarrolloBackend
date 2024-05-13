@@ -64,7 +64,7 @@ function Ejercicio1()
 
 function Ejercicio2()
 {
-    function MayorDeTres(numero1, numero2, numero3)
+    function numMayor(numero1, numero2, numero3)
     {
         if(numero1 > numero2 && numero1 > numero3)
         {
@@ -86,7 +86,7 @@ function Ejercicio2()
         {
             rl.question("Ingrese el tercer numero: ", (numero3) => 
             {
-                console.log(MayorDeTres(parseInt(numero1), parseInt(numero2), parseInt(numero3)));
+                console.log(numMayor(parseInt(numero1), parseInt(numero2), parseInt(numero3)));
                 Iniciar();
             });
         });

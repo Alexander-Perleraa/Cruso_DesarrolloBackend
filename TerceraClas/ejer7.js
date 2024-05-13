@@ -8,23 +8,21 @@ const rl = readline.createInterface
 
 rl.question("Ingrese la categoria:" , (categoria)=>
     {
-        let tipoVehiculo
-        switch(categoria){
-            case moto:
-                tipoVehiculo="Motocicleta";
+        let tipoVehiculo = "";
+        switch(categoria)
+        {
+            case "Moto":
+                tipoVehiculo = "Motocicleta";
                 break;
-            case Auto:
-                tipoVehiculo="Autmovil";
+            case "Auto":
+                tipoVehiculo = "Automovil";
                 break;
-            case Camion:
-                tipoVehiculo="Super camion";
-                break;  
-                case Bicicleta:
-                    tipoVehiculo="Super bicicleta";
-                    break; 
-                    default:
-                    tipoVehiculo="La categoria no existe"
-                    break;
+            case "Camion":
+                tipoVehiculo = "Super camion";
+                break;
+            case "Bicicleta":
+                tipoVehiculo = "Super bicicleta";
+                break;
         }
-        console.log(tipoVehiculo)
+        console.log(tipoVehiculo);
     })            
