@@ -8,9 +8,9 @@ const rl = readline.createInterface
 
 function Iniciar()
 {
-    rl.question("Que ejercico desea probar: ", (numEjer) =>
+    rl.question("Que ejercico desea probar?: ", (numEjer) =>
     {
-         switch(parseInt(numEjer))
+        switch(parseInt(numEjer))
         {
             case 1:
                 Ejercicio1();
@@ -35,9 +35,8 @@ function Iniciar()
                 break;
         }
     });
-}
 
-Iniciar();
+}
 
 function Ejercicio1()
 {
@@ -59,10 +58,8 @@ function Ejercicio1()
 
     rl.question("Ingrese un numero: ", (numero) => {
         console.log(EsMayor(numero));
-        rl.close();
+        Iniciar();
     });
-
-    Iniciar();
 }
 
 function Ejercicio2()
@@ -90,12 +87,11 @@ function Ejercicio2()
             rl.question("Ingrese el tercer numero: ", (numero3) => 
             {
                 console.log(MayorDeTres(parseInt(numero1), parseInt(numero2), parseInt(numero3)));
-                rl.close();
+                Iniciar();
             });
         });
     });
 
-    Iniciar();
 }
 function Ejercicio3()
 {
@@ -113,10 +109,8 @@ function Ejercicio3()
     rl.question("Ingrese un numero: ", (numero) => 
     {
         console.log(Factorial(numero));
-        rl.close();
+        Iniciar();
     });
-
-    Iniciar();
 }
 function Ejercicio4()
 {
@@ -149,11 +143,10 @@ function Ejercicio5()
         rl.question("Igrese el segundo color: ", (color2) => 
         {
             DeterminarColor(color1.toLowerCase(), color2.toLowerCase());
-            rl.close();
+            Iniciar();
         });
     });
 
-    Iniciar();
 }
 function Ejercicio6()
 {
@@ -208,10 +201,9 @@ function Ejercicio6()
     rl.question("Ingrese el numero de mes a conocer: ", (numeroMes) =>
     {
         console.log(DeterminarMes(parseInt(numeroMes)));
-        rl.close();
+        Iniciar();
     });
 
-    Iniciar();
 }
 function Ejercicio7()
 {
@@ -239,8 +231,9 @@ function Ejercicio7()
     rl.question("Ingrese la categoria del vehiculo: ", (categoria) =>
     {
         console.log(DeterminarCategoria(categoria));
-        rl.close();
+        Iniciar();
     });
 
-    Iniciar();
 }
+
+Iniciar();
