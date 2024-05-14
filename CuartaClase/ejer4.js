@@ -11,7 +11,7 @@ function retrasarPromesa(ms)
         })
 }
 retrasarPromesa(2000)
-.then((mensaje) => 
-    {
-        console.log(mensaje);
-    })
+    .then((mensaje) => 
+        {
+            console.log(mensaje);
+        })
