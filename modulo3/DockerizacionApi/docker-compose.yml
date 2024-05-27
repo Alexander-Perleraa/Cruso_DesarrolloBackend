@@ -1,0 +1,13 @@
+version: '3'
+services:
+  api:
+    build: C:\Users\Alex\Documents\DesarrolloBackend_Fusalmo\Cruso_DesarrolloBackend\modulo3\DockerizacionApi\backend
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+
+  fronted:
+    build: C:\Users\Alex\Documents\DesarrolloBackend_Fusalmo\Cruso_DesarrolloBackend\modulo3\DockerizacionApi\frontend
+    ports:
+      - "8080:80"
