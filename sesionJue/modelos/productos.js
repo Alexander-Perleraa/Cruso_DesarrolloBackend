@@ -15,6 +15,10 @@ const ProductoSchema = new mongoose.Schema
     precio:{
         type:Number,
         require:true
+    },
+    imagen:{
+        type:String,
+        require:true
     }
 })
 module.exports =mongoose.model(`Producto`, ProductoSchema)
