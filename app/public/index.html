@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="generarReporte">Generar Reporrte</button>
+    <div id="productos"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function (){
+            fetch('/api/producto')
+                .then(response => response.json())
+                .then(productos => {
+                    const productosD = document.getElementById('productos');
+                    productos.forEach(producto => {
+                        const productoD = document.createElement('div');
+                        productoD.classList.add('producto');
+
+                        const productoImg = document.createElement('img');
+                        productoImg.src = `/uploads/${producto.imagen}`;
+                        productoImg.alt = producto.producto;
+                        productosD.appendChild(productoImg);
+
+                        const productoInfo = document.createElement('div');
+                        productoInfo.classList.add('Producto-Info');
+                        productoInfo.innerHTML = `
+                            <h2>${producto.producto}</h2>
+                            <p>Categoria: ${producto.categoria}</p>
+                            <p>Existencia: ${producto.existencia}</p>
+                            <p>Precio: ${producto.precio.toFixed(2)}</p>
+                        `;
+
+                        productoD.appendChild(productoInfo);
+                        productosD.appendChild(productoD);
+                    });
+                })
+                .catch(error => console.error("Error", error));
+            
+                document.getElementById('generarReporte').addEventListener('click', function()
+                {
+                    fetch('api/producto/reporte')
+                        .then(response => response.blob())
+                        .then(blob => 
+                        {
+                            const url = window.URL.createObjectURL(blob);
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = `Reporte_Productos_$${new Date().toLocaleDateString()}.pdf`;
+                            document.body.appendChild(a);
+                            a.click();
+                            a.remove();
+                        })
+                        .catch(error => console.error('Error', error));
+                });
+
+        });
+    </script>
+</body>
+</html>
