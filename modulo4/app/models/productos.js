@@ -7,19 +7,19 @@ const ProductosSchema = new mongoose.Schema
     },
     categoria:{
         type: String,
-        required: true
+        
     },
     existencia:{
         type: Number,
-        required: true
+        
     },
     precio:{
         type: Number,
-        required: true
+        
     },
     imagen:{
         type: String,
-        required: true
+        
     },    
 });
 
